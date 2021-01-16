@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    Упс. Что то пошло не так
+{% endblock %}
+
+{% block body %}
+    <div class="text-danger"> Что то пошло не так <br> {{ message }} <br>{{ error }}</div>
+    {% include 'includes/choose_files.html' %}
+{% endblock %}

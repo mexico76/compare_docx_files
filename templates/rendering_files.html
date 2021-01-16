@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    Результат
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            {{ left|safe }}
+        </div>
+        <div class="col-sm-6">
+            {{ right|safe }}
+        </div>
+
+
+{#  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">#}
+{#  <div class="collapse navbar-collapse" id="navbarCollapse">#}
+{#    <ul class="navbar-nav mr-auto">#}
+{#     <li class="nav-item dropup show">#}
+{#        <a class="nav-link dropdown-toggle" href="" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Совпадающие выражения</a>#}
+{#        <div class="dropdown-menu show" aria-labelledby="dropdown10" style="overflow: auto; width: 600px; max-height: 500px">#}
+{#        <ul class="list-group">#}
+{#            {% for p in p_repeat %}#}
+{#                {% if p_repeat[p][0]==p_repeat[p][1]: %}#}
+{#                    <li class="list-group-item bg-success">"{{ p }}" - {{ p_repeat[p] }}</li>#}
+{#                {% else %}#}
+{#                    <li class="list-group-item bg-info">"{{ p }}" - {{ p_repeat[p] }}</li>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#            {% for s in s_repeat %}#}
+{#                {% if s_repeat[s][0]==s_repeat[s][1]: %}#}
+{#                    <li class="list-group-item bg-success">"{{ s }}" - {{ s_repeat[s] }}</li>#}
+{#                {% else %}#}
+{#                    <li class="list-group-item bg-info">"{{ s }}" - {{ s_repeat[s] }}</li>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#        </div>#}
+{#      </li>#}
+{#    </ul>#}
+{#  </div>#}
+{#</nav>#}
+
+    </div>
+    </div>
+{% endblock %}

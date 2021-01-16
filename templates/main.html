@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/bootstrap.min.css') }}>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light sticky-top">
+        <div class="row">
+            <div class="col-sm-3"></div><a class="navbar-brand" href="/">Главная</a></div>
+                <div class="col-sm-3"><div class="container bg-success"><p>Совпадение найдено</p></div></div>
+                <div class="col-sm-3"><div class="container bg-danger"><p>Совпадение НЕ найдено</p></div></div>
+                <div class="col-sm-3">
+                 <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle bg-info" type="button" data-toggle="dropdown">Повторы параграфов, предложений
+                  <span class="caret"></span></button>
+                         <div class="dropdown-menu col overflow-auto" style="max-height: 400px">
+                         {% for p in p_repeat %}
+                            {% if p_repeat[p][0]==p_repeat[p][1] %}
+                                <div class="list-group-item bg-success">"{{ p }}" - {{ p_repeat[p] }}</div>
+                            {% else %}
+                                <div class="list-group-item bg-info">"{{ p }}" - {{ p_repeat[p] }}</div>
+                            {% endif %}
+                        {% endfor %}
+                        {% for s in s_repeat %}
+                            {% if s_repeat[s][0]==s_repeat[s][1] %}
+                                <div class="list-group-item bg-success">"{{ s }}" - {{ s_repeat[s] }}</div>
+                            {% else %}
+                                <div class="list-group-item bg-info">"{{ s }}" - {{ s_repeat[s] }}</div>
+                            {% endif %}
+                        {% endfor %}
+                         </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+
+    {% endblock %}
+</body>
+<script src={{ url_for('static', filename='/js/jquery.js') }}></script>
+<script src={{ url_for('static', filename='/js/bootstrap.min.js') }}></script>
+</html>
